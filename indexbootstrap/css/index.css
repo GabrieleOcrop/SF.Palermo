@@ -1,0 +1,395 @@
+*{
+  margin:0;
+  padding:0;
+  display:border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+html{
+  background-color:#212529;
+}
+
+body{
+  background-color: #212529;
+}
+
+.pt-05{
+  padding-top:100px;
+}
+
+.logo{
+  display:flex;
+  justify-content:center;
+  background-color:#212529;
+}
+
+.logo img{
+  height:150px;
+  width:auto;
+}
+
+.nav-item{
+  margin: 0px 20px 0px 20px;
+}
+
+.bottone{
+  background-color:#446074;
+  color:white;
+  padding:10px 25px 10px 25px;
+  border-radius:10px;
+  text-decoration:none;
+}
+
+.navbar{
+  margin:0;
+}
+
+/*HEROOOOOOOOOOOOOOOOO*/
+
+#hero__section{
+  height:78.4vh;
+  background:linear-gradient(90deg, rgba(2,0,36,0.8) 0%, rgba(0,0,0,0.6155637254901961) 50%, rgba(255,255,255,0) 100%),
+ url('../img/sfondo_principale.jpg')  no-repeat center center;
+ position:relative;
+ background-attachment:fixed;
+ background-position:center;
+ background-repeat: no-repeat;
+ background-size:cover;
+}
+
+.hero__description{
+    position:absolute;
+    top:40%; left: 5%;
+}
+
+.hero__title{
+  font-size:32px;
+  color:white;
+}
+
+.hero__desc_content{
+  font-size:16px;
+  color:white;
+  margin-left:0.3%;
+}
+
+@media (max-width:  720px){
+  .hero__description a{
+    display:none;
+  }
+
+  .hero__desc_content{
+    display:none;
+  }
+}
+
+/*DESCRIZIONEEEEEEEEEEEEEEEEEEEE*/
+
+.presentazione{
+  display:block;
+  height:100vh;
+  background-color:#212529;
+  position:relative;
+}
+
+.intro__class{
+  padding-top:2.5%;
+  text-align:center;
+  color:white;
+}
+
+.intro__text{
+  text-align:center;
+  color:white;
+  font-size:16px;
+  padding-top:1%;
+}
+
+.contenitore_delle_cards{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-around;
+  align-items:center;
+  width:100%;
+  height:90%;
+}
+
+.contenitore_card{
+  display:flex;
+  width:auto;
+  height:fit-content;
+}
+
+.card_nobs, .card_nomobile{
+  position:relative;
+  height:40em;
+  width:300px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background: rgba(0,0,0, 0.5);
+  overflow:hidden;
+  border-radius:20px;
+}
+
+/*:before aggiunge un elemento prima .box, che con l'absolute viene piazzato dentro*/
+.card_nobs::before, .card_nomobile::before{
+  content: '';
+  position: absolute;
+  width:150px;
+  height:140%;
+  background:linear-gradient(#8a817c,#f4f3ee);
+  animation: animate 8s linear infinite;
+}
+
+/*after aggiunge un elemento dopo di box*/
+.card_nobs::after, .card_nomobile::after{
+  content:' ';
+  position:absolute;
+  inset: 4px;
+  background:#212529;
+  border-radius:16px;
+}
+/*Dichiaro l'animazione con keyframe*/
+@keyframes animate {
+  0% {
+    transfrom: rotate (0deg);
+  }
+
+  100%{
+    transform:rotate(360deg);
+  }
+}
+
+.test{
+  position:absolute;
+  height:40%;
+  width:90%;
+  z-index:10;
+  top:0;
+  border-radius:16px;
+  overflow:hidden;
+  margin:20px 20px 20px 20px;
+}
+
+.title_card{
+  position:absolute;
+  z-index:11;
+  margin-top:10px;
+  color:white;
+  font-size:38px;
+}
+
+.descrizione_card{
+  position:absolute;
+  z-index:11;
+  color:white;
+  font-size:19px;
+  top:60%;
+  margin-left:4%;
+}
+
+.bottone_card{
+  padding-top:20%;
+  z-index:11;
+  position:absolute;
+  top:87%;
+  text-decoration:none;
+  color:#333533;
+  background:#ced4da;
+  /*border-radius:5px;*/
+  padding:15px 40px 15px 40px;
+  cursor:pointer;
+  transition: all .7s ease-in-out;
+  border-radius:5px;
+}
+
+.bottone_card::after{
+  content : '';
+  position:absolute;
+  width:15%;
+  height:20%;
+  z-index:11;
+  border:1px solid #ffffff;
+  top:-10%;
+  right:5%;
+  transform:translate(-40%);
+  transition:all .7s ease-in-out;
+}
+
+.bottone_card::before{
+  content : '';
+  position:absolute;
+  width:15%;
+  height:20%;
+  z-index:11;
+  border:1px solid #ffffff;
+  bottom:-10%;
+  transform:translate(-100%);
+  transition:all .7s ease-in-out;
+}
+
+.card a{
+  text-decoration:none;
+}
+
+.bottone_card:hover, .bottone_card:focus{
+  background:#e9ecef;
+  color:#43f;
+  text-decoration:underline;
+}
+
+.bottone_card:hover::after{
+   transform:translate(calc(-20% * 21));
+}
+
+.bottone_card:hover::before{
+  transform:translate(calc(100% * 3));
+}
+
+@media (max-width:720px){
+  .presentazione{
+    display:flex;
+    flex-direction:column;
+    height:250vh;
+  }
+
+  .intro__class{
+    margin-top:10%;
+  }
+
+  .intro__text{
+    display:none;
+  }
+
+  .contenitore_delle_cards{
+    flex-direction:column;
+    align-items:center;
+  }
+
+}
+
+/*SUBCONTENTEEEEEEEEEEEEEEEEEEEEEEEEEEEE*/
+
+.subcontent{
+  display:flex;
+  height:100vh;
+  background:linear-gradient(90deg, rgba(2,0,36,0.6) 0%, rgba(2,0,36,0.6) 50%, rgba(2,0,36,0.6) 100%),
+ url('../img/signor_gianni.jpg');
+ /*PARALLAX*/
+ background-attachment:fixed;
+ background-position:center;
+ background-repeat: no-repeat;
+ background-size:cover;
+}
+
+.content__column_1{
+  display:block;
+  width:40%;
+  margin:auto auto;
+  margin-left:0.5%;
+}
+
+.contenuto_sx{
+  color:white;
+  font-size:42px;
+}
+
+.content__column_2{
+  flex-direction:column;
+  width:60%;
+}
+
+.subcontent_dx1{
+  color:white;
+}
+
+.subcontent_title{
+  font-size:36px;
+  text-align:center;
+  margin-top:4%;
+}
+
+.subcontent_description{
+  margin-left:2.5%;
+  margin-right:2.5%;
+}
+
+.subcontent_mobile{
+  display:none;
+}
+
+@media (max-width:720px){
+
+  .subcontent{
+    flex-direction:column;
+  }
+
+  .content__column_1{
+    width:100%;
+    height:30%;
+  }
+
+  .contenuto_sx{
+    text-align:center;
+    margin-top:10%;
+  }
+
+  .content__column_2{
+    width:100%;
+  }
+
+  .subcontent_description{
+    display:none;
+  }
+
+  .subcontent_mobile{
+    color:white;
+  }
+
+  .subcontent_mobile{
+    display:block;
+  }
+
+}
+
+/*SLIDERRRR*/
+
+.slider__content{
+  padding-top:100px;
+  padding-bottom:200px;
+  height:100vh;
+}
+
+.slider_title{
+  color:white;
+  width:100%;
+  font-size:40px;
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.slider_description{
+  color:white;
+  font-size:18px;
+  margin-left:5%;
+  margin-right:5%;
+  margin-bottom:2.5%;
+}
+
+@media (max-width:720px){
+  .slider__content{
+    padding-top:50px;
+    height:70vh;
+  }
+
+  #myCarousel{
+    margin-top:40px;
+  }
+
+  .carousel-caption p{
+    display:none;
+  }
+}
+
+/*FOOTER*/
